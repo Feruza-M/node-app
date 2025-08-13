@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh "docker rm -f node-app || true"
-                sh "docker run -d --name node-app -p 3000:3000 ${IMAGE_NAME}:latest"
+                sh "docker run -d --name node-app -p 3001:3000 ${IMAGE_NAME}:latest"
             }
         }
     }
