@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER = credentials('dockerhub-username') 
-        DOCKERHUB_PASS = credentials('dockerhub-password') 
+        DOCKERHUB_USER = credentials('dockerhub-user') 
+        DOCKERHUB_PASS = credentials('dockerhub-pass') 
         IMAGE_NAME = "docferuza2024/node-app"
     }
 
