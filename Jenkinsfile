@@ -8,10 +8,6 @@ pipeline {
     }
 
     stages {
-        // Этап Checkout можно убрать, если в Jenkins job уже настроен SCM,
-        // потому что Jenkins сам заберет код и Jenkinsfile.
-        // Если хочешь оставить, то исправь URL на свой репозиторий:
-
         stage('Checkout') {
             steps {
                 git url: 'git@github.com:Feruza-M/node-app.git', branch: 'main'
