@@ -22,7 +22,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh "echo ${DOCKERHUB_PASS} | docker login -u ${DOCKERHUB_USER} --password-stdin"
+                sh "docker login -u '$DOCKERHUB_USER' -p '$DOCKERHUB_PASS'"
                 sh "docker push ${IMAGE_NAME}:latest"
             }
         }
