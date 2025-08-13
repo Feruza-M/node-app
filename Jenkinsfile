@@ -2,15 +2,19 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER = credentials('dockerhub-user') 
-        DOCKERHUB_PASS = credentials('dockerhub-pass') 
+        DOCKERHUB_USER = credentials('dockerhub-user')
+        DOCKERHUB_PASS = credentials('dockerhub-pass')
         IMAGE_NAME = "docferuza2024/node-app"
     }
 
     stages {
+        // Этап Checkout можно убрать, если в Jenkins job уже настроен SCM,
+        // потому что Jenkins сам заберет код и Jenkinsfile.
+        // Если хочешь оставить, то исправь URL на свой репозиторий:
+
         stage('Checkout') {
             steps {
-                git 'https://github.com/AnastasiyaGapochkina01/node-app.git'
+                git url: 'git@github.com:Feruza-M/node-app.git', branch: 'main'
             }
         }
 
